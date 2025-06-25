@@ -39,7 +39,7 @@ const FormSignUp = () => {
                     Object.entries(result.errors).forEach(([field, messages]) => {
                         setError(field, {
                             type: 'server',
-                            message: messages.join(', '),
+                            message: messages,
                         });
                     });
                 } else {
