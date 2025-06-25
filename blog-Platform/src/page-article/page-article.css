@@ -1,0 +1,127 @@
+.page-article {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+}
+
+.page-article .article-title {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #1890ff;
+    text-decoration: none;
+    width: 100%;
+}
+
+.page-article .article-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.page-article .meta-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.page-article .meta-right {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: right;
+}
+
+.page-article .author-avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.page-article .author-name {
+    font-weight: 500;
+}
+
+.page-article .article-date {
+    color: #999;
+    font-size: 12px;
+}
+
+.page-article .tag {
+    display: inline-block;
+    background: #f3f3f3;
+    color: #555;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin-right: 6px;
+}
+
+.page-article .article-description {
+    display: flex;
+    color: #666;
+    font-style: italic;
+    margin-top: 16px;
+    width: 100%;
+}
+
+.page-article .article-body {
+    margin-top: 24px;
+    line-height: 1.6;
+}
+
+.page-article .article-body h1,
+.page-article .article-body h2,
+.page-article .article-body h3 {
+    margin-top: 1.5em;
+}
+
+.page-article .article-body ul,
+.page-article .article-body ol {
+    padding-left: 1.2em;
+    margin-top: 1em;
+}
+
+.page-article .article-body li {
+    margin-bottom: 0.5em;
+}
+.btn-conteiner {
+    display: flex;
+}
+.title-article-name {
+    display: flex;
+}
+.article-delete {
+    background: none;
+    border: 0.5px solid red;
+    color: red;
+}
+.btn-article-all {
+    display: flex;
+    gap: 5px;
+}
+.article-edit {
+    background: none;
+    border: 0.5px solid green;
+    color: green;
+}
+.like-button {
+    background: none;
+    border: none;
+    font-size: 18px;
+    color: #222222;
+
+}
+
+.like-button:hover {
+background: none;
+}
+.btn-like {
+    display: flex;
+}

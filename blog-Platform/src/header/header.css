@@ -1,0 +1,56 @@
+.header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 24px;
+        background-color: #fff;
+        font-family: sans-serif;
+}
+
+.title {
+        font-size: 18px;
+        font-weight: 500;
+}
+
+.nav {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+}
+
+.nav-link {
+        text-decoration: none;
+        color: #222;
+        font-size: 14px;
+}
+
+.sign-up {
+        border: 1px solid #28a745;
+        color: #28a745;
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-weight: 500;
+}
+.username {
+        font-weight: bold;
+        margin-right: 10px;
+}
+
+.logout-button {
+        background: none;
+        border: 0.5px solid black ;
+        color: black;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 5px;
+}
+
+.logout-button:hover {
+        text-decoration: underline;
+}
+.create-article {
+        border: 0.5px solid green;
+        background: none;
+        color: green;
+
+}

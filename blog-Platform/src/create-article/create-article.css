@@ -1,0 +1,40 @@
+.create-article-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 24px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.create-article-container h2 {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.create-article-container label {
+    display: block;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.create-article-container .ant-input,
+.create-article-container .ant-input-textarea {
+    margin-top: 8px;
+}
+
+.tags {
+    margin-bottom: 16px;
+}
+
+.tag-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}

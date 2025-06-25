@@ -1,0 +1,95 @@
+.article-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    padding: 16px;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.card-header {
+    display: flex;
+
+    align-items: center;
+}
+
+.article-title {
+    font-size: 18px;
+    color: #007bff;
+    text-decoration: none;
+    padding-right: 30px;
+}
+
+.article-title:hover {
+    text-decoration: underline;
+}
+
+.likes {
+    justify-content: left;
+    font-size: 14px;
+    color: #666;
+}
+
+.tag {
+    display: inline-block;
+    background-color: #f3e8ff;
+    color: #4b0082;
+    border: 1px solid #4b0082;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 12px;
+    margin: 8px 0;
+}
+
+.article-description {
+    color: #444;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.card-left {
+    width: 700px;
+}
+
+.card-footer {
+   display: grid;
+    justify-content: end;
+    width: 100px;
+}
+
+.author-info {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    color: #444;
+}
+
+.article-date {
+    font-size: 12px;
+    color: #999;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.like-icon {
+    color: #aaa;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.liked {
+    color: #ff4d4f;
+}
+
+.like-icon:hover {
+    background-color: transparent !important;
+    color: #ff7875;
+}
