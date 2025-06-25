@@ -39,17 +39,18 @@ const FormSignIn = () => {
                 if (result.errors?.['email or password']) {
                     setError('email', {
                         type: 'server',
-                        message: result.errors['email or password'].join(', '),
+                        message: Object.entries(result.errors)[0].join(' '),
                     });
                     setError('password', {
                         type: 'server',
-                        message: result.errors['email or password'].join(', '),
+                        message: Object.entries(result.errors)[0].join(' '),
                     });
                 } else {
                     console.error('Unexpected error:', result);
                 }
                 return;
             }
+
 
             login(result.user);
             navigate('/');
