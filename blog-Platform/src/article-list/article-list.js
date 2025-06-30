@@ -1,36 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import ArticleCard from '../article-card/article-card';
+import Pagination from '../pagination/pagination';
 
-const ArticleList = ({ currentPage, pageSize, setTotalArticles }) => {
-    const [articles, setArticles] = useState([]);
-    const [loading, setLoading] = useState(true);
+const fetchArticles = async ({ pageParam = 1, pageSize }) => {
+    const offset = (pageParam - 1) * pageSize;
+    const res = await fetch(`https://blog-platform.kata.academy/api/articles?limit=${pageSize}&offset=${offset}`);
+    if (!res.ok) throw new Error('Ошибка при загрузке статей');
+    return res.json();
+};
 
-    useEffect(() => {
-        const loadArticles = async () => {
-            setLoading(true);
-            try {
-                const offset = (currentPage - 1) * pageSize;
-                const res = await fetch(`https://blog-platform.kata.academy/api/articles?limit=${pageSize}&offset=${offset}`);
-                const data = await res.json();
-                setArticles(data.articles);
-                setTotalArticles(data.articlesCount);
-            } catch (error) {
-                console.error('Ошибка загрузки статей:', error);
-            } finally {
-                setLoading(false);
-            }
-        };
+const ArticleList = ({ pageSize }) => {
+    const [currentPage, setCurrentPage] = useState(1);
 
-        loadArticles();
-    }, [currentPage, pageSize, setTotalArticles]);
+    const {
+        data,
+        isLoading,
+        isError,
+        error,
+    } = useQuery({
+        queryKey: ['articles', currentPage, pageSize],
+        queryFn: () => fetchArticles({ pageParam: currentPage, pageSize }),
+        keepPreviousData: true,
+        staleTime: 1000 * 60,
+    });
 
-    if (loading) return <div>Loading articles...</div>;
+    if (isLoading) return <div>Loading articles...</div>;
+    if (isError) return <div>Error: {error.message}</div>;
+
+    const { articles, articlesCount } = data;
 
     return (
         <div>
             {articles.map(article => (
                 <ArticleCard key={article.slug} article={article} />
             ))}
+            <Pagination
+                currentPage={currentPage}
+                total={articlesCount}
+                pageSize={pageSize}
+                onPageChange={setCurrentPage}
+            />
         </div>
     );
 };
